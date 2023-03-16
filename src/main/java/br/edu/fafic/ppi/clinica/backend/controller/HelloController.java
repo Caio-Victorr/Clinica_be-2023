@@ -19,7 +19,7 @@ public class HelloController {
 
     @GetMapping("/{usuario}")
     public String helloUsuario(@PathVariable("usuario") String usuario){ //modo seguro
-        http://localhost:8080/hello/Caio
+        //http://localhost:8080/hello/Caio
         return "Olá " + usuario;
     }
 }
