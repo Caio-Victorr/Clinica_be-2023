@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
 public class Login {
 
@@ -23,4 +22,10 @@ public class Login {
     private String email;
 
     private String senha;
+
+    public Login(Long id, String email, String senha) {
+        this.id = id;
+        this.email = email;
+        this.senha = senha;
+    }
 }
