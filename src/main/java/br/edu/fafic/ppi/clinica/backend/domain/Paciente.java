@@ -15,13 +15,17 @@ import java.util.List;
 @Data
 @DiscriminatorValue("P")
 @NoArgsConstructor
-@AllArgsConstructor
-@Builder
+//@AllArgsConstructor
+//@Builder
 public class Paciente extends Pessoa{
 
     private String cartaoSUS;
+    public Paciente(String nome, String cpf, LocalDate dataNascimento, Endereco endereco, List<Contato> contatos, Login login, String cartaoSUS) {
+        super(nome, cpf, dataNascimento, endereco, contatos, login);
+        this.cartaoSUS = cartaoSUS;
+    }
 
-//    public Paciente(String nome, String cpf, LocalDate dataNascimento, Endereco endereco, List<Contato> contatos, Login login, String cartaoSUS) {
+    //    public Paciente(String nome, String cpf, LocalDate dataNascimento, Endereco endereco, List<Contato> contatos, Login login, String cartaoSUS) {
 //        super(nome, cpf, dataNascimento, endereco, contatos, login);
 //        this.cartaoSUS = cartaoSUS;
 //    }

@@ -15,8 +15,8 @@ import java.util.List;
 @DiscriminatorValue("M")
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
-@Builder
+
+
 public class Medico extends Pessoa{
 
     private String crm;

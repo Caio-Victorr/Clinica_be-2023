@@ -20,4 +20,5 @@ public class Contato {
     private String numeroTelefone;
 
     private String operadora;
+
 }
