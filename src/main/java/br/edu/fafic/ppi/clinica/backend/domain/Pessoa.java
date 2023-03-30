@@ -18,6 +18,7 @@ import java.util.List;
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name = "tipo")
 @Data
+@NoArgsConstructor
 public abstract class Pessoa {
 
     @Id
@@ -29,6 +30,7 @@ public abstract class Pessoa {
     private String nome;
 
     @CPF(message = "CPF inválido")
+    @NotBlank
     private String cpf;
 
     private LocalDate dataNascimento;
@@ -36,10 +38,18 @@ public abstract class Pessoa {
     @Embedded
     private Endereco endereco;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Contato> contatos;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Login login;
 
+    public Pessoa(String nome, String cpf, LocalDate dataNascimento, Endereco endereco, List<Contato> contatos, Login login) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.dataNascimento = dataNascimento;
+        this.endereco = endereco;
+        this.contatos = contatos;
+        this.login = login;
+    }
 }
