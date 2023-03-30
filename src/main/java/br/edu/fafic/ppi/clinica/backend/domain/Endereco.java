@@ -1,8 +1,8 @@
 package br.edu.fafic.ppi.clinica.backend.domain;
 
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.Embedded;
-import jakarta.persistence.Entity;
+import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
 import lombok.Data;
 
 @Embeddable

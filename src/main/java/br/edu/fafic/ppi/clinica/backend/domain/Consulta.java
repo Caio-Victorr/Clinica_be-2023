@@ -1,11 +1,12 @@
 package br.edu.fafic.ppi.clinica.backend.domain;
 
 import br.edu.fafic.ppi.clinica.backend.enums.StatusConsulta;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 
 @Entity
 @Data
