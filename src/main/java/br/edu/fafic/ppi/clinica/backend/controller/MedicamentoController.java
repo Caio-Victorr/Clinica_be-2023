@@ -27,4 +27,15 @@ public class MedicamentoController {
     public ResponseEntity<Medicamento> findById(@PathVariable("id") Long id){
         return ResponseEntity.ok(medicamentoService.findById(id));
     }
+
+    @PutMapping
+    public ResponseEntity update(@RequestBody Medicamento med){
+        Medicamento m = medicamentoService.save(med);
+        return ResponseEntity.ok().body(m);
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity findAll(){
+        return ResponseEntity.ok().body(medicamentoService.getAll());
+    }
 }

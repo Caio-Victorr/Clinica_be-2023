@@ -6,6 +6,8 @@ import br.edu.fafic.ppi.clinica.backend.repositories.MedicamentoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class MedicamentoService {
@@ -20,6 +22,9 @@ public class MedicamentoService {
         return medicamentoRepository.findById(id).orElseThrow(()->
                 new ObjetoNaoEncontradoException
                         ("Não existe na base de dados"));
+    }
+    public List<Medicamento> getAll(){
+        return medicamentoRepository.findAll();
     }
 
 }
